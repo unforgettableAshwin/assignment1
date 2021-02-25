@@ -9,12 +9,12 @@ public class SavingsAccount
 	)
 	{
 		if( openingBalance >= 0 )
-			balance = openingBalance;
+			this.balance = openingBalance;
 	}
 
 	public double getBalance()
 	{
-		return balance;
+		return this.balance;
 	}
 
 	public double getInterestRate()
@@ -26,10 +26,10 @@ public class SavingsAccount
 			double amount
 	)
 	{
-		double balanceAfterWithdrawal = getBalance() - amount;
+		double balanceAfterWithdrawal = this.getBalance() - amount;
 		if( amount >= 0 && balanceAfterWithdrawal >= 0 )
 		{
-			balance = balanceAfterWithdrawal;
+			this.balance = balanceAfterWithdrawal;
 			return true;
 		}
 		
@@ -42,7 +42,7 @@ public class SavingsAccount
 	{
 		if( amount >= 0 )
 		{
-			balance += amount;
+			this.balance += amount;
 			return true;
 		}
 
@@ -53,17 +53,17 @@ public class SavingsAccount
 			int years
 	)
 	{
-		return MeritAmericaBankApp.futureValue( getBalance(), getInterestRate(), years );
+		return MeritAmericaBankApp.futureValue( this.getBalance(), this.getInterestRate(), years );
 	}
 
 	public String toString()
 	{
 		StringBuilder s = new StringBuilder(
-				"Savings Account Balance: $" + MeritAmericaBankApp.formatBalance( getBalance() ) );
+				"Savings Account Balance: $" + MeritAmericaBankApp.formatBalance( this.getBalance() ) );
 
-		s.append( "\nSavings Account Interest Rate: " + MeritAmericaBankApp.formatInterestRate( getInterestRate() ) );
+		s.append( "\nSavings Account Interest Rate: " + MeritAmericaBankApp.formatInterestRate( this.getInterestRate() ) );
 		s.append( "\nSavings Account Balance in 3 years: $"
-				+ MeritAmericaBankApp.formatBalance( futureValue( 3 ) ) );
+				+ MeritAmericaBankApp.formatBalance( this.futureValue( 3 ) ) );
 		
 		return s.toString();
 	}

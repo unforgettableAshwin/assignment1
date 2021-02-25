@@ -11,12 +11,12 @@ public class AccountHolder
 
 	AccountHolder()
 	{
-		nameFirst = new String();
-		nameMiddle = new String();
-		nameLast = new String();
-		ssn = new String();
-		accountChecking = new CheckingAccount( 0 );
-		accountSavings = new SavingsAccount( 0 );
+		this.nameFirst = new String();
+		this.nameMiddle = new String();
+		this.nameLast = new String();
+		this.ssn = new String();
+		this.accountChecking = new CheckingAccount( 0 );
+		this.accountSavings = new SavingsAccount( 0 );
 	}
 
 	AccountHolder(
@@ -28,49 +28,49 @@ public class AccountHolder
 		setMiddleName( middleName );
 		setLastName( lastName );
 		setSSN( ssn );
-		accountChecking = new CheckingAccount( checkingAccountOpeningBalance );
-		accountSavings = new SavingsAccount( savingsAccountOpeningBalance );
+		this.accountChecking = new CheckingAccount( checkingAccountOpeningBalance );
+		this.accountSavings = new SavingsAccount( savingsAccountOpeningBalance );
 	}
 
 	public String getFirstName()
 	{
-		return nameFirst;
+		return this.nameFirst;
 	}
 
 	public void setFirstName(
 			String firstName
 	)
 	{
-		nameFirst = firstName;
+		this.nameFirst = firstName;
 	}
 
 	public String getMiddleName()
 	{
-		return nameMiddle;
+		return this.nameMiddle;
 	}
 
 	public void setMiddleName(
 			String middleName
 	)
 	{
-		nameMiddle = middleName;
+		this.nameMiddle = middleName;
 	}
 
 	public String getLastName()
 	{
-		return nameLast;
+		return this.nameLast;
 	}
 
 	public void setLastName(
 			String lastName
 	)
 	{
-		nameLast = lastName;
+		this.nameLast = lastName;
 	}
 
 	public String getSSN()
 	{
-		return ssn;
+		return this.ssn;
 	}
 
 	public void setSSN(
@@ -82,20 +82,20 @@ public class AccountHolder
 
 	public CheckingAccount getCheckingAccount()
 	{
-		return accountChecking;
+		return this.accountChecking;
 	}
 
 	public SavingsAccount getSavingsAccount()
 	{
-		return accountSavings;
+		return this.accountSavings;
 	}
 
 	public String toString()
 	{
-		StringBuilder s = new StringBuilder( "Name: " + getFirstName() + " " + getMiddleName() + " " + getLastName() );
-		s.append( "\nSSN: " + getSSN() );
-		s.append( "\n" + getCheckingAccount().toString() );
-		s.append( "\n" + getSavingsAccount().toString() );
+		StringBuilder s = new StringBuilder( "Name: " + this.getFirstName() + " " + this.getMiddleName() + " " + this.getLastName() );
+		s.append( "\nSSN: " + this.getSSN() );
+		s.append( "\n" + this.getCheckingAccount().toString() );
+		s.append( "\n" + this.getSavingsAccount().toString() );
 		return s.toString();
 	}
 }
