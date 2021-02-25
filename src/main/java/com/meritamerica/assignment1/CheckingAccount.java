@@ -4,7 +4,9 @@ public class CheckingAccount
 {
 	private double balance = 0;
 
-	CheckingAccount( double openingBalance )
+	CheckingAccount(
+			double openingBalance
+	)
 	{
 		if( openingBalance >= 0 )
 			balance = openingBalance;
@@ -21,13 +23,15 @@ public class CheckingAccount
 	}
 
 	public boolean withdraw(
-			double amount )
+			double amount
+	)
 	{
 		return false;
 	}
 
 	public boolean deposit(
-			double amount )
+			double amount
+	)
 	{
 		if( amount >= 0 )
 		{
@@ -39,17 +43,19 @@ public class CheckingAccount
 	}
 
 	public double futureValue(
-			int years )
+			int years
+	)
 	{
-		return MeritAmericaBankApp.futureValue( balance, getInterestRate(), years );
-		// return balance * Math.pow( 1 + getInterestRate() / 100, years );
+		return MeritAmericaBankApp.futureValue( getBalance(), getInterestRate(), years );
 	}
 
 	public String toString()
 	{
-		StringBuilder s = new StringBuilder( "Checking Account Balance: $" + getBalance() );
-		s.append( "\nChecking Account Interest Rate: " + String.format( "%.4f", getInterestRate() / 100 ) );
-		s.append( "\nChecking Account Balance in 3 years: $" + String.format( "%.2f", futureValue( 3 ) ) );
+		StringBuilder s = new StringBuilder(
+				"Checking Account Balance: $" + MeritAmericaBankApp.formatBalance( getBalance() ) );
+		
+		s.append( "\nChecking Account Interest Rate: " + MeritAmericaBankApp.formatInterestRate( getInterestRate() ) );
+		s.append( "\nChecking Account Balance in 3 years: $" + MeritAmericaBankApp.formatBalance( futureValue( 3 ) ) );
 		return s.toString();
 	}
 }
