@@ -50,7 +50,7 @@ public class AccountHolder
 
 	public CheckingAccount getCheckingAccount()
 	{
-		return new CheckingAccount();
+		return new CheckingAccount( 0 );
 	}
 
 	public SavingsAccount getSavingsAccount()
@@ -61,6 +61,17 @@ public class AccountHolder
 	public String toString()
 	{
 		StringBuilder s = new StringBuilder( "Name: " + getFirstName() + " " + getMiddleName() + " " + getLastName() );
+		s.append( "\nSSN: " + getSSN() );
+		s.append( "\nChecking Account Balance: " + getCheckingAccount().getBalance() );
+		s.append( "\nChecking Account Interest Rate: " + getCheckingAccount().getInterestRate() );
+		s.append( "\nChecking Account Balance in 3 years: " + getCheckingAccount().futureValue( 3 ) );
+		s.append( "\n: " + get );
+		s.append( "\n: " + get );
+		s.append( "\n: " + get );
+		s.append( "\n: " + get );
+		s.append( "\n: " + get );
+		s.append( "\n: " + get );
+		s.append( "\n: " + get );
 
 		return s.toString();
 	}
