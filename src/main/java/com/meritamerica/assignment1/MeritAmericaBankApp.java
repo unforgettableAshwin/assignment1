@@ -24,7 +24,7 @@ public class MeritAmericaBankApp
 			int years
 	)
 	{
-		return presentValue * Math.pow( 1 + interestRate / 100, years );
+		return presentValue * Math.pow( 1 + interestRate, years );
 	}
 
 	public static String formatInterestRate(

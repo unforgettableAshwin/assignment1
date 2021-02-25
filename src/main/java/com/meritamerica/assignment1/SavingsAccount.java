@@ -19,7 +19,7 @@ public class SavingsAccount
 
 	public double getInterestRate()
 	{ // Percentage:
-		return 1;
+		return 0.01;
 	}
 
 	public boolean withdraw(

@@ -18,8 +18,8 @@ public class CheckingAccount
 	}
 
 	public double getInterestRate()
-	{ // Percentage:
-		return 0.01;
+	{
+		return 0.0001;
 	}
 
 	public boolean withdraw(
