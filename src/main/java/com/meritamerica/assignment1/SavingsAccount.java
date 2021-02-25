@@ -26,6 +26,13 @@ public class SavingsAccount
 			double amount
 	)
 	{
+		double balanceAfterWithdrawal = getBalance() - amount;
+		if( amount >= 0 && balanceAfterWithdrawal >= 0 )
+		{
+			balance = balanceAfterWithdrawal;
+			return true;
+		}
+		
 		return false;
 	}
 

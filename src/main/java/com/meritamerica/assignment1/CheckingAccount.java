@@ -26,6 +26,13 @@ public class CheckingAccount
 			double amount
 	)
 	{
+		double balanceAfterWithdrawal = getBalance() - amount;
+		if( amount >= 0 && balanceAfterWithdrawal >= 0 )
+		{
+			balance = balanceAfterWithdrawal;
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -53,7 +60,7 @@ public class CheckingAccount
 	{
 		StringBuilder s = new StringBuilder(
 				"Checking Account Balance: $" + MeritAmericaBankApp.formatBalance( getBalance() ) );
-		
+
 		s.append( "\nChecking Account Interest Rate: " + MeritAmericaBankApp.formatInterestRate( getInterestRate() ) );
 		s.append( "\nChecking Account Balance in 3 years: $" + MeritAmericaBankApp.formatBalance( futureValue( 3 ) ) );
 		return s.toString();
