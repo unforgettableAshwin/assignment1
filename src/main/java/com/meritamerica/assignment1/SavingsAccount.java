@@ -18,7 +18,7 @@ public class SavingsAccount
 	}
 
 	public double getInterestRate()
-	{ // Percentage:
+	{
 		return 0.01;
 	}
 
